@@ -1,0 +1,84 @@
+#Conformance check for BIM4Ren Data Model - Utils Layer:  Energy 
+# For all Entitie slisted in the Energy #
+@prefix schema: <http://schema.org/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix bot:   <https://w3id.org/bot#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix beo:   <https://pi.pauwel.be/voc/buildingelement#> .
+@prefix opm:   <https://w3id.org/opm#> .
+@prefix lbd:   <https://linkebuildingdata.org/LBD#> .
+@prefix props: <http://lbd.arch.rwth-aachen.de/props#> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix seas:  <https://w3id.org/seas/> .
+@prefix unit:  <http://qudt.org/vocab/unit/> .
+@prefix IFC4-PSD: <https://www.linkedbuildingdata.net/IFC4-PSD#> .
+@prefix smls:  <https://w3id.org/def/smls-owl#> .
+@prefix inst:  <https://www.ugent.be/myAwesomeFirstBIMProject#> .
+@prefix mep:   <http://pi.pauwel.be/voc/distributionelement#> .
+@prefix furn:  <http://pi.pauwel.be/voc/furniture#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix b4rEnergy: <https://models.bim4ren.eu/utils/energy#> .
+
+#Min 1 Cardinality
+schema:val_existence
+    a sh:NodeShape;
+    sh:property[
+        sh:minCount 1
+    ].
+
+#Min 1 & Max 1 Cardinality
+schema:cardinality1_1
+    a sh:NodeShape;
+    sh:property[
+        sh:minCount 1;
+        sh:maxCount 1;
+    ].
+
+#String Datatype
+schema:stringshape
+    a sh:NodeShape;
+    sh:property[
+        sh:datatype xsd:String
+    ].
+
+#Check start date is earlier than end date
+b4rEnergy:EnergyShape
+    a sh:NodeShape;
+    sh:property[
+        sh:path b4rEnergy:startDate;
+        sh:lessThan b4rEnergy:endDate;
+        sh:minCount 1;
+        sh:message "The start date is later than the end date!"
+    ].
+
+#Energy Consumption
+b4rEnergy:ConsumptionShape
+    a sh:NodeShape;
+    sh:targetClass b4rEnergy:Consumption;
+    sh:property[
+        sh:path b4rEnergy:EnergySource;
+        sh:node schema:val_existence
+    ].
+
+#Energy Performance Certification
+#checks that there is only one value for associated location, minimum energy consumption, and max energy consumption
+b4rEnergy:EnergyPerformanceCertificationShape
+    a sh:NodeShape;
+    sh:targetClass b4rEnergy:EnergyPerformanceCertification;
+    sh:property[
+        sh:path b4rEnergy:associatedLocation;
+        sh:node schema:cardinality1_1
+    ];
+    sh:property[
+        sh:path b4rEnergy:minEnergyConsumption;
+        sh:node schema:cardinality1_1
+    ];
+    sh:property[
+        sh:path b4rEnergy:maxEnergyConsumption;
+        sh:node schema:cardinality1_1
+    ].
+

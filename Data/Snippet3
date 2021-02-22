@@ -1,0 +1,95 @@
+#Two window instances (1 with wrong thermal property, and 1 with correct ones)
+@prefix schema: <http://schema.org/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix bot:   <https://w3id.org/bot#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix beo:   <https://pi.pauwel.be/voc/buildingelement#> .
+@prefix opm:   <https://w3id.org/opm#> .
+@prefix lbd:   <https://linkebuildingdata.org/LBD#> .
+@prefix props: <http://lbd.arch.rwth-aachen.de/props#> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix seas:  <https://w3id.org/seas/> .
+@prefix unit:  <http://qudt.org/vocab/unit/> .
+@prefix IFC4-PSD: <https://www.linkedbuildingdata.net/IFC4-PSD#> .
+@prefix smls:  <https://w3id.org/def/smls-owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix inst:  <https://www.ugent.be/myAwesomeFirstBIMProject#> .
+@prefix mep:   <http://pi.pauwel.be/voc/distributionelement#> .
+@prefix furn:  <http://pi.pauwel.be/voc/furniture#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+
+#Window1 (does not conform)
+inst:window_c39bc8c5-ee04-426b-9242-23858206a4c2
+        a                             beo:Window , bot:Element ;
+        props:batid                   inst:batid_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:catXEXgorie             inst:catXEXgorie_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:encadrementIntXEXrieur  inst:encadrementIntXEXrieur_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:famille                 inst:famille_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:familleEtType           inst:familleEtType_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:globalIdIfcRoot         inst:globalIdIfcRoot_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:hauteurDeLappui         inst:hauteurDeLappui_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:hauteurSousLinteau      inst:hauteurSousLinteau_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:iDDuType                inst:iDDuType_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:iDHXFXte                inst:iDHXFXte_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:identifiant             inst:identifiant_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:isExternal              inst:isExternal_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:nameIfcRoot             inst:nameIfcRoot_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:niveau                  inst:niveau_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:objectTypeIfcObject     inst:objectTypeIfcObject_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:overallHeightIfcWindow  inst:overallHeightIfcWindow_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:overallWidthIfcWindow   inst:overallWidthIfcWindow_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:phaseDeCrXEXation       inst:phaseDeCrXEXation_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:reference               inst:reference_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:surface                 inst:surface_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:thermalTransmittance    inst:thermalTransmittance_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:type                    inst:type_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        props:volume                  inst:volume_c39bc8c5-ee04-426b-9242-23858206a4c2 ;
+        owl:sameAs                    inst:IfcWindow_6169 .
+
+inst:thermalTransmittance_c39bc8c5-ee04-426b-9242-23858206a4c2
+        a                opm:Property ;
+        seas:evaluation  inst:state_thermalTransmittance_c39bc8c5-ee04-426b-9242-23858206a4c2_1607447682157 .
+        
+inst:state_thermalTransmittance_c39bc8c5-ee04-426b-9242-23858206a4c2_1607447682157
+        a                     opm:CurrentPropertyState ;
+        schema:value          "3.6886"^^xsd:double ;
+        prov:generatedAtTime  "2020-12-08T18:14:42.157" .
+
+#Window2
+inst:window_c39bc8c5-ee04-426b-9242-23858206a67f
+        a                             beo:Window , bot:Element ;
+        props:batid                   inst:batid_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:catXEXgorie             inst:catXEXgorie_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:encadrementIntXEXrieur  inst:encadrementIntXEXrieur_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:famille                 inst:famille_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:familleEtType           inst:familleEtType_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:globalIdIfcRoot         inst:globalIdIfcRoot_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:hauteurDeLappui         inst:hauteurDeLappui_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:hauteurSousLinteau      inst:hauteurSousLinteau_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:iDDuType                inst:iDDuType_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:iDHXFXte                inst:iDHXFXte_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:identifiant             inst:identifiant_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:isExternal              inst:isExternal_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:nameIfcRoot             inst:nameIfcRoot_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:niveau                  inst:niveau_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:objectTypeIfcObject     inst:objectTypeIfcObject_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:overallHeightIfcWindow  inst:overallHeightIfcWindow_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:overallWidthIfcWindow   inst:overallWidthIfcWindow_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:phaseDeCrXEXation       inst:phaseDeCrXEXation_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:reference               inst:reference_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:surface                 inst:surface_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:thermalTransmittance    inst:thermalTransmittance_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:type                    inst:type_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        props:volume                  inst:volume_c39bc8c5-ee04-426b-9242-23858206a67f ;
+        owl:sameAs                    inst:IfcWindow_6475 .
+
+inst:thermalTransmittance_c39bc8c5-ee04-426b-9242-23858206a67f
+        a                opm:Property ;
+        seas:evaluation  inst:state_thermalTransmittance_c39bc8c5-ee04-426b-9242-23858206a67f_1607447682146 .
+
+
+inst:state_thermalTransmittance_c39bc8c5-ee04-426b-9242-23858206a67f_1607447682146
+        a                     opm:CurrentPropertyState ;
+        schema:value          "5.5617"^^xsd:double ;
+        prov:generatedAtTime  "2020-12-08T18:14:42.146" .
