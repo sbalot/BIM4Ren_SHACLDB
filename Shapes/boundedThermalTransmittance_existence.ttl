@@ -33,10 +33,10 @@ beo:WindowShape
         sh:select """
             SELECT $this ?s 
             WHERE {
-                $this rdf:type beo:Window.
-                ?s props:thermalTransmittance ?o1.
-                ?o1 seas:evaluation ?o2.
-                ?o2 schema:value ?val.
+                $this a <https://pi.pauwel.be/voc/buildingelement#Window> .
+                ?s <http://lbd.arch.rwth-aachen.de/props#thermalTransmittance> ?o1 .
+                ?o1 <https://w3id.org/seas/evaluation> ?o2 .
+                ?o2 <http://schema.org/value> ?val .
             }
             """;
     ].
