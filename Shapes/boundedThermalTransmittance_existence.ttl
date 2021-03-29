@@ -44,7 +44,6 @@ beo:WindowShape
         sh:message "Thermal Transmittance Value not present";
         sh:prefixes : ;
         sh:select """
-        
             SELECT $this ?s 
             WHERE {
                 $this a beo:Window .
