@@ -23,26 +23,27 @@
 
 beo:WindowShape
     a sh:NodeShape;
-    sh:declare [
-        sh:prefix "beo";
-        sh:namespace "https://pi.pauwel.be/voc/buildingelement#"^^xsd:anyURI;
-        ];
-    sh:declare [
-        sh:prefix "props";
-        sh:namespace "http://lbd.arch.rwth-aachen.de/props#"^^xsd:anyURI;
-        ];
-    sh:declare [
-        sh:prefix "seas";
-        sh:namespace "https://w3id.org/seas#"^^xsd:anyURI;
-        ];
-    sh:declare [
-        sh:prefix "schema";
-        sh:namespace "http://schema.org#"^^xsd:anyURI;
-        ];
     sh:sparql[
         a sh:SPARQLConstraint;
         sh:message "Thermal Transmittance Value not present";
-        sh:prefixes : ;
+        sh:prefixes [
+            sh:declare [
+                sh:prefix "beo";
+                sh:namespace "https://pi.pauwel.be/voc/buildingelement#"^^xsd:anyURI;
+            ];
+            sh:declare [
+                sh:prefix "props";
+                sh:namespace "http://lbd.arch.rwth-aachen.de/props#"^^xsd:anyURI;
+            ];
+            sh:declare [
+                sh:prefix "seas";
+                sh:namespace "https://w3id.org/seas#"^^xsd:anyURI;
+            ];
+            sh:declare [
+                sh:prefix "schema";
+                sh:namespace "http://schema.org#"^^xsd:anyURI;
+            ];
+        ];
         sh:select """
             SELECT $this ?s 
             WHERE {
