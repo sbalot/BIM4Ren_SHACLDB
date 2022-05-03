@@ -1,0 +1,26 @@
+#5.2 Coeffecient of performance (COP for heat pump/efficiency for boiler)
+inst:BoilerShape
+    a sh:NodeShape;
+    sh:targetClass ifcowl:IfcBoilerType;
+    sh:severity sh:Violation; 
+    sh:property [
+        sh:path s4bldg:thermalEfficiency;
+        sh:datatype [sh:alternativePath ( xsd:decimal xsd:Integer xsd:double) ];
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:minInclusive 0.90;
+        sh:message "The Boiler has efficiency less than 90%";
+    ].
+
+inst:HeatPumpShape
+    a sh:NodeShape;
+    sh:targetClass etim:EC011794;
+    sh:severity sh:Violation; 
+    sh:property [
+        sh:path schema:value;
+        sh:datatype [sh:alternativePath ( xsd:decimal xsd:Integer xsd:double) ];
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:minInclusive 3.2;
+        sh:message "The heat pump has a coefficient of performance less than the required minimum";
+    ].
