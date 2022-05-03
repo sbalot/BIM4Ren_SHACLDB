@@ -1,0 +1,25 @@
+#5.1 Domestic hot water type
+
+@prefix schema: <http://schema.org/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix beo:   <https://pi.pauwel.be/voc/buildingelement#> .
+@prefix props: <http://lbd.arch.rwth-aachen.de/props#> .
+@prefix seas:  <https://w3id.org/seas/> .
+@prefix unit:  <http://qudt.org/vocab/unit/> .
+@prefix smls:  <https://w3id.org/def/smls-owl#> .
+@prefix inst:  <https://www.ugent.be/myAwesomeFirstBIMProject#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ifcowl: <https://standards.buildingsmart.org/IFC/DEV/IFC4_1/OWL>.
+
+inst:BoilerShape
+    a sh:NodeShape;
+    sh:targetClass ifcowl:IfcBoilerType;
+    sh:severity sh:Violation; 
+    sh:property [
+        sh:path ifcowl:IfcBoilerTypeEnum;
+        sh:in ("WATER" "STEAM" "USERDEFINED" "NOTDEFINED");
+        sh:message "The boiler type does not conform to the predefined types"
+].
