@@ -1,0 +1,79 @@
+@prefix schema: <http://schema.org/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix bot:   <https://w3id.org/bot#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix beo:   <https://pi.pauwel.be/voc/buildingelement#> .
+@prefix opm:   <https://w3id.org/opm#> .
+@prefix lbd:   <https://linkebuildingdata.org/LBD#> .
+@prefix props: <http://lbd.arch.rwth-aachen.de/props#> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix seas:  <https://w3id.org/seas/> .
+@prefix unit:  <http://qudt.org/vocab/unit/> .
+@prefix smls:  <https://w3id.org/def/smls-owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix inst:  <https://www.ugent.be/myAwesomeFirstBIMProject#> .
+@prefix mep:   <http://pi.pauwel.be/voc/distributionelement#> .
+@prefix furn:  <http://pi.pauwel.be/voc/furniture#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+
+
+inst:wall_6335f5c3-1a3d-409c-8baa-86e5028b364b
+        a                              beo:Wall , bot:Element ;
+        props:activerLeModXEXleAnalytique
+                inst:activerLeModXEXleAnalytique_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:batid                    inst:batid_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:catXEXgorie              inst:catXEXgorie_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:contrainteInfXEXrieure   inst:contrainteInfXEXrieure_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:contrainteSupXEXrieure   inst:contrainteSupXEXrieure_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:dXEXcalageInfXEXrieur    inst:dXEXcalageInfXEXrieur_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:dXEXcalageSupXEXrieur    inst:dXEXcalageSupXEXrieur_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:extendToStructure        inst:extendToStructure_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:extensionInfXEXrieure    inst:extensionInfXEXrieure_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:extensionSupXEXrieure    inst:extensionSupXEXrieure_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:famille                  inst:famille_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:familleEtType            inst:familleEtType_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:globalIdIfcRoot          inst:globalIdIfcRoot_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:hauteurNonContrainte     inst:hauteurNonContrainte_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:iDDuType                 inst:iDDuType_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:isExternal               inst:isExternal_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:liXEXAuVolume            inst:liXEXAuVolume_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:ligneDeJustification     inst:ligneDeJustification_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:limiteDePiXEXce          inst:limiteDePiXEXce_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:loadBearing              inst:loadBearing_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:longueur                 inst:longueur_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:nameIfcRoot              inst:nameIfcRoot_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:objectTypeIfcObject      inst:objectTypeIfcObject_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:partieInfXEXrieureAttachXEXe
+                inst:partieInfXEXrieureAttachXEXe_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:partieSupXEXrieureAttachXEXe
+                inst:partieSupXEXrieureAttachXEXe_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:phaseDeCrXEXation        inst:phaseDeCrXEXation_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:reference                inst:reference_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:structure                inst:structure_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:surface                  inst:surface_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:thermalTransmittance     inst:thermalTransmittance_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:type                     inst:type_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:utilisationStructurelle  inst:utilisationStructurelle_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        props:volume                   inst:volume_6335f5c3-1a3d-409c-8baa-86e5028b364b ;
+        owl:sameAs                     inst:IfcWallStandardCase_1520 .
+
+inst:thermalTransmittance_6335f5c3-1a3d-409c-8baa-86e5028b364b
+        a                opm:Property ;
+        seas:evaluation  inst:state_thermalTransmittance_6335f5c3-1a3d-409c-8baa-86e5028b364b_1607447682171 .
+
+inst:state_thermalTransmittance_6335f5c3-1a3d-409c-8baa-86e5028b364b_1607447682171
+        a                     opm:CurrentPropertyState ;
+        schema:value          "0.575221238938053"^^xsd:double ;
+        prov:generatedAtTime  "2020-12-08T18:14:42.171" .
+
+inst:globalIdIfcRoot_6335f5c3-1a3d-409c-8baa-86e5028b364b
+        a                opm:Property ;
+        seas:evaluation  inst:state_globalIdIfcRoot_6335f5c3-1a3d-409c-8baa-86e5028b364b_1607447682171 .
+
+inst:state_globalIdIfcRoot_6335f5c3-1a3d-409c-8baa-86e5028b364b_1607447682171
+        a                     opm:CurrentPropertyState ;
+        schema:value          "1ZDVN36Zr0d8kgXkK2YpPB" ;
+        prov:generatedAtTime  "2020-12-08T18:14:42.171" .
+
+
