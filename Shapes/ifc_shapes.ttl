@@ -1,0 +1,51 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix schema: <http://schema.org/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix bot:   <https://w3id.org/bot#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix beo:   <https://pi.pauwel.be/voc/buildingelement#> .
+@prefix opm:   <https://w3id.org/opm#> .
+@prefix lbd:   <https://linkebuildingdata.org/LBD#> .
+@prefix props: <http://lbd.arch.rwth-aachen.de/props#> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix seas:  <https://w3id.org/seas/> .
+@prefix unit:  <http://qudt.org/vocab/unit/> .
+@prefix smls:  <https://w3id.org/def/smls-owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix inst:  <https://www.ugent.be/myAwesomeFirstBIMProject#> .
+@prefix mep:   <http://pi.pauwel.be/voc/distributionelement#> .
+@prefix furn:  <http://pi.pauwel.be/voc/furniture#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+
+
+inst:WallShape
+    a sh:NodeShape;
+    sh:targetClass beo:Wall;
+    sh:property [
+        sh:path props:thermalTransmittance;
+        sh:node inst:thermalTransmittanceShape;
+    ].
+
+    inst:thermalTransmittanceShape
+        a sh:NodeShape;
+        sh:property[
+            sh:path seas:evaluation;
+            sh:node inst:evaluationshape;
+        ].
+    inst:evaluationshape
+        a sh:NodeShape;
+        sh:property[
+            sh:path schema:value;
+            sh:minCount 2;
+            sh:message "Thermal transmittancevalue missing !";
+        ].
+
+#inst:WallShape
+#    a sh:NodeShape;
+#    sh:targetClass beo:Wall;
+#    sh:property [
+#        sh:path props:thermalTransmittance;
+#        sh:minCount 2;
+#        sh:message "Thermal transmittancevalue missing !";
+#        ].
