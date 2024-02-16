@@ -1,0 +1,201 @@
+@prefix hld:<http://www.example.cpm/heterogeneousLinkedData/>.
+hld:fileNameShape
+ sh:NodeShape;
+ sh:targetClass [dc:Image, dc:Dataset];
+ sh:property [
+  sh:path [dc11:fileName ct:fileName ct:fileType rdf:type] ;
+  sh:minCount 1;
+  sh:maxCount 1;
+ ].
+
+hld:fileNameShape2
+ sh:NodeShape;
+ sh:targetClass [ifcowl:IfcWallStandardCase, ifcowl:IfcWall, ifcowl:IfcStructuralWall, ifcowl:Window, ifcowl:Door];
+ sh:property [
+  sh:path [dc11:fileName ct:fileName ct:fileType rdf:type] ;
+  sh:minCount 1;
+  sh:maxCount 1;
+ ].
+
+hld:imagelinkDiscoveryShape
+ sh:NodeShape;
+ sh:targetClass [dc:Image, dc:Dataset];
+ sh:property [
+  sh:path [ns1:annotationRegion] ;
+  sh:minCount 1;
+ ],
+sh:property [
+ sh:path [ns1:hasRegion] ;
+ sh:minCount 1;
+ ],
+ sh:property [
+ sh:path [omg:hasSimpleGeometry];
+ sh:minCount 1;
+ ].
+
+hld:authorshipShape
+ sh:NodeShape;
+ sh:targetClass [dc11:Document ct:InternalDocument ct:ExternalDocument dc11:Image dcat:Model];
+ sh:property [
+  sh:path [ct:createdBy ct:createdOn schema:createdOn];
+  sh:minCount 1;
+  sh:maxCount 1;
+ ].
+
+hld:filetypeShape
+ sh:NodeShape;
+ sh:targetClass [dc11:image ct:InternalDocument ct:ExternalDocument dc11:document dcat:document dc11:model];
+ sh:property [
+  sh:path [dc11:fileName ct:fileName ct:fileType] ;
+  sh:minCount 1;
+  sh:maxCount 1;
+ ],
+ sh:property[
+  sh:path [ct:description schema:description];
+  sh:minCount 1;
+ ].
+
+hld:ModelShape1
+ sh:NodeShape;
+ sh:targetClass [ifcOWL:IfcWallStandardCase bot:Wall beo:Wall ifcOWL:IfcWall];
+ sh:property [
+  sh:path [ifcOWL:thermaltransmittance bot:thermaltransmittance s4bldf:thermaltransmittance] ;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:minValue 1.2;
+  sh:maxValue 2.5;
+  sh:message "Thermal transmittance value is not within the acceptable limits"
+ ].
+
+:ImageShape1
+    a sh:NodeShape;
+ sh:targetClass ct:linktype lol:linkType
+ sh:property [
+  sh:path hld:confidenceScoreshape hld:linkAlgorithmshape hld:algorithmAuthorshape
+ ].
+
+hld:confidenceScoreshape 
+ a sh:NodeShape;
+sh:targetClass lol:confidencescore;
+sh:property
+[
+sh:path schema:value;
+sh:minValue 1;
+sh:maxValue 1;
+sh:datatype [xsd:integer xsd:float];
+].
+
+hld:linkAlgorithmshape
+ a sh:NodeShape;
+ sh:targetClass lol:linkAlgorithm;
+sh:property [
+sh:path schema:value;
+sh:minValue 1;
+sh:maxValue 1;
+].
+
+hld:linkAuthorshape
+ a sh:NodeShape;
+ sh:targetClass lol:AlgorithmAuthor;
+sh:property [
+  sh:path schema:Value[
+     sh:minValue 1;
+].
+
+  hld:fileTypeModelShape
+ sh:NodeShape;
+ sh:targetClass [dc11:Model];
+ sh:property [
+  sh:path [dc11:fileType ct:format] ;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:value ["application/x-extension-ifc"]
+ ].
+
+hld:ImageTitleShape
+ sh:NodeShape;
+ sh:targetClass [dc:Image];
+ sh:property [
+  sh:path [dc11:title] ;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:datatype xsd:string;
+ ].
+
+hld:createdLinksShape
+ sh:NodeShape;
+ sh:targetClass [lol:linktype ct:linktype];
+ sh:property [
+  sh:path [dc11:creator] ;
+  sh:minCount 1;
+  sh:maxCount 1;
+  xsd:datatype schema:Person;
+ ].
+
+hld:documentShape
+ sh:NodeShape;
+ sh:targetClass foaf:Document;
+ sh:property [
+  sh:path [nif:annotation dc11:description dc11:title] ;
+  sh:minCount 1;
+ ].
+
+hld:documentShape2
+ sh:NodeShape;
+ sh:targetClass [foaf:Document];
+ sh:property [
+  sh:path nif:Annotation ;
+  sh:node [hld:docAnnotationshape];
+ ].
+
+hld:docAnnotationshape
+ a sh:NodeShape;
+ sh:property[
+ sh:path [nif:confidence ao:hasTopic prov:generatedAt];
+    sh:minCount 1;
+    sh:maxCount 1;
+ ].
+
+hld:imageAnnotationShape
+ sh:NodeShape;
+ sh:targetClass [foaf:image];
+ sh:property [
+  sh:path [geo:hasGeometry omg:hasGeometry] ;
+  sh:minCount 1;
+  sh:node hld:geometryShape;
+ ].
+
+hld:geometryShape
+ a sh:NodeShape;
+ sh:targetClass [geo:hasGeometry omg:hasGeometry];
+ sh:property [
+    sh:path [geo:WKT dc11:title nif:confidence prov:generatedAtTime];
+    sh:minCount 1;
+    sh:maxCount 1;
+ ].
+
+hld:imageMetadataShape
+ sh:NodeShape;
+ sh:targetClass foaf:image;
+ sh:property [
+  sh:path [dc11:description dc11:title] ;
+  sh:minCount 1;
+ ].
+
+hld:imageCreationDataShape
+ sh:NodeShape;
+ sh:targetClass [foaf:image];
+ sh:property [
+  sh:path [dc11:createdOn dc11:creator] ;
+  sh:minCount 1;
+  sh:maxCount 1;
+ ].
+
+hld:documentMetadataShape
+ sh:NodeShape;
+ sh:targetClass [dc:Document, ct:InternalDocument];
+ sh:property [
+  sh:path [dc11:fileName ct:fileName ct:fileType rdf:type] ;
+  sh:minCount 1;
+  sh:maxCount 1;
+ ].
